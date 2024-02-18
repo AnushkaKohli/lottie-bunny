@@ -1,11 +1,12 @@
-import Lottie, { LottieRefCurrentProps } from "lottie-react";
+import Lottie from "lottie-react";
+// import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import bunnyAnimation from "./assets/bunny-love-animation.json"
 import yayAnimation from "./assets/yay-animation.json"
 import { useRef, useState } from "react";
 import './App.css'
 
 function App() {
-  const bunnyRef = useRef<LottieRefCurrentProps>(null)
+  // const bunnyRef = useRef<LottieRefCurrentProps>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const buttonRef = useRef<HTMLButtonElement>(null)
   const [saidYes, setSaidYes] = useState(false)
@@ -60,8 +61,8 @@ function App() {
             <div className='flex gap-2 justify-center'>
               <button onClick={() => {
                 setSaidYes(true)
-              }}>Yes</button>
-              <button ref={buttonRef} onMouseOver={handleMouseOver} onClick={handleMouseOver}>No</button>
+              }} className="dark:text-white">Yes</button>
+              <button ref={buttonRef} onMouseOver={handleMouseOver} onClick={handleMouseOver} className="dark:text-white">No</button>
             </div>
           )
         }
